@@ -186,13 +186,13 @@ $ npm install
 └── themes</code></pre><p>命令执行结束后，就可以正式使用Hexo了，使用debug模式进行查看：</p>
 <pre><code>$ hexo s --debug</code></pre><p>访问<code>http://localhost:4000</code>就可以看到Hexo的默认界面了。</p>
 <h1 id="二、托管博客"><a href="#二、托管博客" class="headerlink" title="二、托管博客"></a>二、托管博客</h1><p>在本地Hexo搭建好之后就要选择服务器进行托管，这里只讲一下通过Github进行托管的方法。</p>
-<h2 id="1-创建仓库"><a href="#1-创建仓库" class="headerlink" title="1.创建仓库"></a>1.创建仓库</h2><p>进入Github新建仓库，名称格式为UserName.github.io，例如xuhaoranLeo.github.io。然后将本地Hexo的站点配置文件的配置仓库修改为当前仓库的git地址 ：</p>
+<h2 id="1-创建仓库"><a href="#1-创建仓库" class="headerlink" title="1.创建仓库"></a>1.创建仓库</h2><p>进入Github新建仓库，名称格式为UserName.github.io，例如ningspeals.github.io。然后将本地Hexo的站点配置文件的配置仓库修改为当前仓库的git地址 ：</p>
 <pre><code>$ cd ~/blog/
 $ open _config.yml
 // 修改repository
 deploy:
   type: git
-  repository: https://github.com/xuhaoranLeo/xuhaoranleo.github.com.git
+  repository: https://github.com/ningspeals/ningspeals.github.com.git
 branch: master</code></pre><p>此处注意:后面要接Space，这种格式才能被Hexo识别</p>
 <h2 id="2-配置ssh-key"><a href="#2-配置ssh-key" class="headerlink" title="2.配置ssh key"></a>2.配置ssh key</h2><p>仓库配置好之后，要为你的Github添加ssh public key。</p>
 <p>SSH 密钥对可以让您方便的登录到 SSH 服务器，而无需输入密码。由于您无需发送您的密码到网络中，SSH 密钥对被认为是更加安全的方式。</p>
@@ -223,12 +223,11 @@ The key&apos;s randomart image is:
 date: 2017-11-22 13:56:34
 tags: 
     - Terminal Command Line</code></pre><p>书写完成之后生成generate静态文件后进行部署deploy操作，会让你的文章发到Github托管的服务器上：</p>
-<pre><code>$ hexo g -d</code></pre><p>日常书写之外，如果你还想定制多样化的博客样式，可以使用各种Theme，Hexo默认的样式为landscape，我的博客的样式为NexT。其他各种样式可以去Hexo官网主题搜索。</p>
-<p>例如找到NexT主题后进入其Github，使用git进行安装：</p>
-<pre><code>$ git clone https://github.com/iissnan/hexo-theme-next themes/next</code></pre><p>之后修改站点配置文件中的theme属性：</p>
-<pre><code>theme: next</code></pre><p>最后清空缓存并重新生成部署：</p>
-<p>$ hexo clean</p>
-<p>$ hexo g -d</p>
+<pre><code>$ hexo g -d</code></pre><p>日常书写之外，如果你还想定制多样化的博客样式，可以使用各种Theme，Hexo默认的样式为landscape，我的博客的样式为yilia。其他各种样式可以去Hexo官网主题搜索。</p>
+<p>例如找到yilia主题后进入其Github，使用git进行安装：</p>
+<pre><code>$ git clone https://github.com/iissnan/hexo-theme-yilia themes/yilia</code></pre><p>之后修改站点配置文件中的theme属性：</p>
+<pre><code>theme: yilia</code></pre><p>最后清空缓存并重新生成部署：</p>
+<p>$ hexo clean<br>$ hexo g -d</p>
 
       
 
