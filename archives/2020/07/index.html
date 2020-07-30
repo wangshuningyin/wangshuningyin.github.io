@@ -6,12 +6,12 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>Archives: 2020/7 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="侠心交友，素心做人。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/archives/2020/07/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="侠心交友，素心做人。">
 <meta property="og:locale" content="en_US">
@@ -150,355 +150,47 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-iOS中触摸事件传递和响应原理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/30/iOS%E4%B8%AD%E8%A7%A6%E6%91%B8%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92%E5%92%8C%E5%93%8D%E5%BA%94%E5%8E%9F%E7%90%86/">iOS中触摸事件传递和响应原理</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/30/iOS%E4%B8%AD%E8%A7%A6%E6%91%B8%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92%E5%92%8C%E5%93%8D%E5%BA%94%E5%8E%9F%E7%90%86/" class="archive-article-date">
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/07/30/iOS%E4%B8%AD%E8%A7%A6%E6%91%B8%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92%E5%92%8C%E5%93%8D%E5%BA%94%E5%8E%9F%E7%90%86/" class="archive-article-date">
   	<time datetime="2020-07-30T06:55:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-30</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="系统响应阶段"><a href="#系统响应阶段" class="headerlink" title="系统响应阶段"></a>系统响应阶段</h1><ul>
-<li>1.手指触摸屏幕，屏幕感受到触摸后，将事件交给IOKit来处理。</li>
-<li>2.iOKit将触摸事件封装成iOHIDEvent对象，并通过mach port传递给SpringBoard进程。</li>
-</ul>
-<blockquote>
-<p>mach port是进程端口，各进程间通过它来通信。Springboard是一个系统进程，可以理解为桌面系统，可以统一管理和分发系统收到的触摸事件。</p>
-</blockquote>
-<ul>
-<li>3.Springboard由于接收到触摸事件，因此触发了系统进程的主线程的runloop的source回掉。发生触摸事件的时候，你有可能正在桌面上翻页，也有可能正在头条上看新闻，如果是前者，则触发Springboard主线程的runloop的source0回调，将桌面系统交给系统进程去消耗。而如果是后者，则将触摸事件通过IPC传递给前台app进程，后面的事便是APP内部对于触摸事件的响应了。</li>
-</ul>
-<h1 id="APP响应触摸事件"><a href="#APP响应触摸事件" class="headerlink" title="APP响应触摸事件"></a>APP响应触摸事件</h1><ul>
-<li>1.APP进程的mach port接收来自Springboard的触摸事件，主线程runloop被唤醒，触发source1回调。</li>
-<li>2.source1回调又触发了一个source0回调，将接收到的IOHIDEvent对象封装成UIEvent对象，此时APP将正式开始对于触摸的响应。</li>
-<li>3.source0回调将触摸事件添加到UIApplication的事件队列，当触摸事件出队后UIApplication为触摸事件寻找最佳响应着。</li>
-</ul>
-<p>-4.寻找到最佳响应着之后，接下来的事情便是事件在响应链中传递和响应。</p>
-<p>#触摸 事件 响应者</p>
-<h2 id="触摸"><a href="#触摸" class="headerlink" title="触摸"></a>触摸</h2><p>触摸对象即UITouch对象。一个手指触摸屏幕，就会生成一个UITouch对象，如果多个手指同时触摸，就会生成多个UITouch对象。多个手指先后触摸，如果系统判断多个手指触摸的是同一个地方，那么不会生成多个UITouch对象，而是更新这个UITouch对象，改变其tap count。如果对歌手指触摸的不是同一个地方，那么就会产生对个UITouch对象。</p>
-<p>##触摸事件<br>触摸事件即UIEvent。UIEvent即对UITouch的一次封装。由于一次触摸事件并不止有一个触摸对象，可能是多指同时触摸。触摸对象集合可以通过allUITouchs属性来获取。</p>
-<p>##响应者<br>响应着即UIResponser，UIView，UIViewController，UIApplication，UIAppdelegate等实例都是UIResponser，响应者响应触摸事件是由下面的方法来实现的：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;手指触碰屏幕，触摸开始</span><br><span class="line">- (void)touchesBegan:(NSSet&lt;UITouch *&gt; *)touches withEvent:(nullable UIEvent *)event;</span><br><span class="line">&#x2F;&#x2F;手指在屏幕上移动</span><br><span class="line">- (void)touchesMoved:(NSSet&lt;UITouch *&gt; *)touches withEvent:(nullable UIEvent *)event;</span><br><span class="line">&#x2F;&#x2F;手指离开屏幕，触摸结束</span><br><span class="line">- (void)touchesEnded:(NSSet&lt;UITouch *&gt; *)touches withEvent:(nullable UIEvent *)event;</span><br><span class="line">&#x2F;&#x2F;触摸结束前，某个系统事件中断了触摸，例如电话呼入</span><br><span class="line">- (void)touchesCancelled:(NSSet&lt;UITouch *&gt; *)touches withEvent:(nullable UIEvent *)event;</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/30/iOS%E4%B8%AD%E8%A7%A6%E6%91%B8%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92%E5%92%8C%E5%93%8D%E5%BA%94%E5%8E%9F%E7%90%86/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-AndroidStudio中如何创建指定布局的layout文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+    	 
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/17/AndroidStudio%E4%B8%AD%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E6%8C%87%E5%AE%9A%E5%B8%83%E5%B1%80%E7%9A%84layout%E6%96%87%E4%BB%B6/">AndroidStudio中如何创建指定布局的layout文件</a>
+      <a class="archive-article-title" href="/2020/07/30/iOS%E4%B8%AD%E8%A7%A6%E6%91%B8%E4%BA%8B%E4%BB%B6%E4%BC%A0%E9%80%92%E5%92%8C%E5%93%8D%E5%BA%94%E5%8E%9F%E7%90%86/">iOS中触摸事件传递和响应原理</a>
     </h1>
   
 
-        
-        <a href="/2020/06/17/AndroidStudio%E4%B8%AD%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E6%8C%87%E5%AE%9A%E5%B8%83%E5%B1%80%E7%9A%84layout%E6%96%87%E4%BB%B6/" class="archive-article-date">
-  	<time datetime="2020-06-17T02:26:53.535Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<p>首先点击右键，New，找到Edit File Templates</p>
-<p><img src="https://img2020.cnblogs.com/blog/1446249/202005/1446249-20200501060035979-1442992578.png" alt=""></p>
-<p>在指定的地方勾上 Enable Live Templates</p>
-<p><img src="https://img2020.cnblogs.com/blog/1446249/202005/1446249-20200501060135024-345671532.png" alt=""></p>
-<p>然后再次点击右键 New，就可以看到这个：</p>
-<p><img src="https://img2020.cnblogs.com/blog/1446249/202005/1446249-20200501060237472-995697937.png" alt=""></p>
-<p>然后我们就可以指定我们的布局了：</p>
-<p><img src="https://img2020.cnblogs.com/blog/1446249/202005/1446249-20200501060552128-247940348.png" alt=""></p>
+        <div class="article-info info-on-right">
+          
+          
 
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/17/AndroidStudio%E4%B8%AD%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E6%8C%87%E5%AE%9A%E5%B8%83%E5%B1%80%E7%9A%84layout%E6%96%87%E4%BB%B6/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-Hexo博客-for-Mac搭建步骤" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
+    </div></section>
+  
+
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/29/Hexo%E5%8D%9A%E5%AE%A2-for-Mac%E6%90%AD%E5%BB%BA%E6%AD%A5%E9%AA%A4/">Hexo博客for Mac的搭建步骤</a>
-    </h1>
-  
-
-        
-        <a href="/2016/05/29/Hexo%E5%8D%9A%E5%AE%A2-for-Mac%E6%90%AD%E5%BB%BA%E6%AD%A5%E9%AA%A4/" class="archive-article-date">
-  	<time datetime="2016-05-29T07:04:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-05-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一、环境配置及安装"><a href="#一、环境配置及安装" class="headerlink" title="一、环境配置及安装"></a>一、环境配置及安装</h1><h2 id="1-Node-js"><a href="#1-Node-js" class="headerlink" title="1.Node.js"></a>1.Node.js</h2><p> 移步<a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a>官网进行安装。</p>
-<h2 id="2-Git"><a href="#2-Git" class="headerlink" title="2.Git"></a>2.Git</h2><p>Xcode自带Git环境，或者移步<a href="https://git-scm.com" target="_blank" rel="noopener">Git官网</a>进行安装，再或者使用Homebrew安装：</p>
-<pre><code>$ brew install git</code></pre><p>当安装完Node.js和Git之后，就可以进行Hexo安装了：</p>
-<pre><code>$ sudo npm install -g hexo-cli</code></pre><p>安装成功之后可以cd到你想要存放博客的目录，默认为~/目录，执行建站命令：</p>
-<pre><code>$ hexo init BlogName
-$ npm install
-// 成功之后的目录结构如下
-├── _config.yml
-├── package.json
-├── scaffolds
-├── source
-|   ├── _drafts
-|   └── _posts
-└── themes</code></pre><p>命令执行结束后，就可以正式使用Hexo了，使用debug模式进行查看：</p>
-<pre><code>$ hexo s --debug</code></pre><p>访问<code>http://localhost:4000</code>就可以看到Hexo的默认界面了。</p>
-<h1 id="二、托管博客"><a href="#二、托管博客" class="headerlink" title="二、托管博客"></a>二、托管博客</h1><p>在本地Hexo搭建好之后就要选择服务器进行托管，这里只讲一下通过Github进行托管的方法。</p>
-<h2 id="1-创建仓库"><a href="#1-创建仓库" class="headerlink" title="1.创建仓库"></a>1.创建仓库</h2><p>进入Github新建仓库，名称格式为UserName.github.io，例如ningspeals.github.io。然后将本地Hexo的站点配置文件的配置仓库修改为当前仓库的git地址 ：</p>
-<pre><code>$ cd ~/blog/
-$ open _config.yml
-// 修改repository
-deploy:
-  type: git
-  repository: https://github.com/ningspeals/ningspeals.github.com.git
-branch: master</code></pre><p>此处注意:后面要接Space，这种格式才能被Hexo识别</p>
-<h2 id="2-配置ssh-key"><a href="#2-配置ssh-key" class="headerlink" title="2.配置ssh key"></a>2.配置ssh key</h2><p>仓库配置好之后，要为你的Github添加ssh public key。</p>
-<p>SSH 密钥对可以让您方便的登录到 SSH 服务器，而无需输入密码。由于您无需发送您的密码到网络中，SSH 密钥对被认为是更加安全的方式。</p>
-<p>SSH 密钥对总是成双出现的，一把公钥，一把私钥。公钥可以自由的放在您所需要连接的 SSH 服务器上，而私钥必须稳妥的保管好。</p>
-<p>所谓”公钥登录”，原理很简单，就是用户将自己的公钥储存在远程主机上。登录的时候，远程主机会向用户发送一段随机字符串，用户用自己的私钥加密后，再发回来。远程主机用事先储存的公钥进行解密，如果成功，就证明用户是可信的，直接允许登录 shell，不再要求密码。这样子，我们即可保证了整个登录过程的安全，也不会受到中间人攻击。</p>
-<p>—— archlinux page</p>
-<p>理解完ssh key之后就可以进行生成了：</p>
-<pre><code>$ ssh-keygen -t rsa -C &quot;your_email@example.com&quot;
-Enter file in which to save the key (/Users/xuhaoran/.ssh/id_rsa): // 输入绝对地址和名称，直接enter使用默认
-Enter passphrase (empty for no passphrase):  // 输入ssh key的密码，直接enter是不使用密码
-
-// 生成成功
-The key&apos;s randomart image is:
-+---[RSA 2048]----+
-|    ..o .    ..+ |
-|     oo. .    o.o|
-|     +  o .  o +B|
-|      o+ +. + =.%|
-|       +S.++ + B+|
-|      ..+O= E   *|
-|         +.o   .o|
-|        .      . |
-|                 |
-+----[SHA256]-----+</code></pre><p>成功生成之后使用任意方法打开.public文件，复制里面的密钥，粘贴到Github -&gt; Settings -&gt; SSH and GPG keys -&gt; New SSH key -&gt;Key中，Title可以随意写。</p>
-<h1 id="三、基本使用"><a href="#三、基本使用" class="headerlink" title="三、基本使用"></a>三、基本使用</h1><p>Hexo会自动生成.md文件在~/BlogName/source/_posts目录下，可以使用各种Markdown编辑器进行博客的书写了。</p>
-<p>在每篇文章里面可以配置Front-matter，来标记类别、时间、标签等：</p>
-<pre><code>title: Terminal命令小结
-date: 2017-11-22 13:56:34
-tags: 
-    - Terminal Command Line</code></pre><p>书写完成之后生成generate静态文件后进行部署deploy操作，会让你的文章发到Github托管的服务器上：</p>
-<pre><code>$ hexo g -d</code></pre><p>日常书写之外，如果你还想定制多样化的博客样式，可以使用各种Theme，Hexo默认的样式为landscape，我的博客的样式为yilia。其他各种样式可以去Hexo官网主题搜索。</p>
-<p>例如找到yilia主题后进入其Github，使用git进行安装：</p>
-<pre><code>$ git clone https://github.com/iissnan/hexo-theme-yilia themes/yilia</code></pre><p>之后修改站点配置文件中的theme属性：</p>
-<pre><code>theme: yilia</code></pre><p>最后清空缓存并重新生成部署：</p>
-<p>$ hexo clean<br>$ hexo g -d</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/05/29/Hexo%E5%8D%9A%E5%AE%A2-for-Mac%E6%90%AD%E5%BB%BA%E6%AD%A5%E9%AA%A4/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hexo博客搭建文档" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/05/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%96%87%E6%A1%A3/">hexo博客搭建文档</a>
-    </h1>
-  
-
-        
-        <a href="/2015/11/05/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%96%87%E6%A1%A3/" class="archive-article-date">
-  	<time datetime="2015-11-05T04:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-11-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2015/11/05/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%96%87%E6%A1%A3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-  
 
 
           </div>
@@ -520,9 +212,9 @@ tags:
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
+		isHome: false,
 		isPost: false,
-		isArchive: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
