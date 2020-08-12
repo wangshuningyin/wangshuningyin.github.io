@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Java中的基本数据类型 | Hexo</title>
+  <title>字符集编码和字符串 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="认识二进制 十进制 每一位可以是0～9这10个值，到10进位。一百用十进制表示就是100，十就10。   二进制 每一位可以是0和1这两个值，到2进位。一百用二进制表示就1100100，十就是1010.   十六进制 每一位可以是0~F这15个值，到16进位。 一百用十六进制表示就是64, 十就是A.   bit和byte 一 个二进制的位叫做个bit， 俗称小b。宽带中的单位，都是小b 八个二进">
+  <meta name="description" content="什么是字符集和编码 什么是字符集( Charset ) 字符集就是字符的集合。-般会包含一种语言的字符。比如GBK ，是包含所有常用汉字字符的字符集。ASCII 是包含英文字符的字符集。 字符就是Java中的char , char是character的简写。     什么是编码( Encoding ) char代表一个字符，char的本质也是数字。将数字映射到字符，就叫编码。 将一个字符集映射到数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java中的基本数据类型">
-<meta property="og:url" content="http://yoursite.com/2020/08/12/Java%E4%B8%AD%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/index.html">
+<meta property="og:title" content="字符集编码和字符串">
+<meta property="og:url" content="http://yoursite.com/2020/08/12/%E5%AD%97%E7%AC%A6%E9%9B%86%E7%BC%96%E7%A0%81%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="认识二进制 十进制 每一位可以是0～9这10个值，到10进位。一百用十进制表示就是100，十就10。   二进制 每一位可以是0和1这两个值，到2进位。一百用二进制表示就1100100，十就是1010.   十六进制 每一位可以是0~F这15个值，到16进位。 一百用十六进制表示就是64, 十就是A.   bit和byte 一 个二进制的位叫做个bit， 俗称小b。宽带中的单位，都是小b 八个二进">
+<meta property="og:description" content="什么是字符集和编码 什么是字符集( Charset ) 字符集就是字符的集合。-般会包含一种语言的字符。比如GBK ，是包含所有常用汉字字符的字符集。ASCII 是包含英文字符的字符集。 字符就是Java中的char , char是character的简写。     什么是编码( Encoding ) char代表一个字符，char的本质也是数字。将数字映射到字符，就叫编码。 将一个字符集映射到数">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-08-12T07:22:51.000Z">
-<meta property="article:modified_time" content="2020-08-12T07:30:29.923Z">
+<meta property="article:published_time" content="2020-08-12T07:35:29.000Z">
+<meta property="article:modified_time" content="2020-08-12T07:39:11.716Z">
 <meta property="article:author" content="NingSpeals">
 <meta name="twitter:card" content="summary">
   
@@ -150,60 +150,78 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java中的基本数据类型" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-字符集编码和字符串" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Java中的基本数据类型
+      字符集编码和字符串
     </h1>
   
 
         
-        <a href="/2020/08/12/Java%E4%B8%AD%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="archive-article-date">
-  	<time datetime="2020-08-12T07:22:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-12</time>
+        <a href="/2020/08/12/%E5%AD%97%E7%AC%A6%E9%9B%86%E7%BC%96%E7%A0%81%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="archive-article-date">
+  	<time datetime="2020-08-12T07:35:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="认识二进制"><a href="#认识二进制" class="headerlink" title="认识二进制"></a>认识二进制</h2><ul>
-<li><h4 id="十进制"><a href="#十进制" class="headerlink" title="十进制"></a>十进制</h4><ul>
-<li>每一位可以是0～9这10个值，到10进位。一百用十进制表示就是100，十就10。</li>
+        <h2 id="什么是字符集和编码"><a href="#什么是字符集和编码" class="headerlink" title="什么是字符集和编码"></a>什么是字符集和编码</h2><ul>
+<li><h4 id="什么是字符集-Charset"><a href="#什么是字符集-Charset" class="headerlink" title="什么是字符集( Charset )"></a>什么是字符集( Charset )</h4><ul>
+<li>字符集就是字符的集合。-般会包含一种语言的字符。比如GBK ，是包含所有常用汉字字符的字符集。ASCII 是包含英文字符的字符集。<ul>
+<li>字符就是Java中的char , char是character的简写。</li>
 </ul>
 </li>
-<li><h4 id="二进制"><a href="#二进制" class="headerlink" title="二进制"></a>二进制</h4><ul>
-<li>每一位可以是0和1这两个值，到2进位。一百用二进制表示就1100100，十就是1010.</li>
 </ul>
 </li>
-<li><h4 id="十六进制"><a href="#十六进制" class="headerlink" title="十六进制"></a>十六进制</h4><ul>
-<li>每一位可以是0~F这15个值，到16进位。 一百用十六进制表示就是64, 十就是A.</li>
+<li><h4 id="什么是编码-Encoding"><a href="#什么是编码-Encoding" class="headerlink" title="什么是编码( Encoding )"></a>什么是编码( Encoding )</h4><ul>
+<li>char代表一个字符，char的本质也是数字。将数字映射到字符，就叫编码。</li>
+<li>将一个字符集映射到数字 ,就是给这个字符集编码。编码是有标准的，所有的计算机系统按照同一个编码标准执行。<ul>
+<li>有时候编码和字符集会混用。<h2 id="编码和字符集介绍"><a href="#编码和字符集介绍" class="headerlink" title="编码和字符集介绍"></a>编码和字符集介绍</h2></li>
 </ul>
 </li>
-<li><h4 id="bit和byte"><a href="#bit和byte" class="headerlink" title="bit和byte"></a>bit和byte</h4><ul>
-<li>一 个二进制的位叫做个bit， 俗称小b。宽带中的单位，都是小b</li>
-<li>八个二进制的位，组成一个byte，俗称大B。硬盘等存储的单位，都是大B</li>
-<li>Byte是计算机中基本的街量存储的单位，计算机在对外使用时不会用小b作为划分存储的单位。<h2 id="数字的基本数据类型"><a href="#数字的基本数据类型" class="headerlink" title="数字的基本数据类型"></a>数字的基本数据类型</h2></li>
 </ul>
 </li>
-<li><h4 id="整数类型"><a href="#整数类型" class="headerlink" title="整数类型"></a>整数类型</h4><ul>
-<li>byte占用1个byte，值域是-128 ~ 127</li>
-<li>short占用2个byte，值域是-32768 ~ 32767</li>
-<li>int占用4个byte，值域是-2147483648 ~ 2147483647.。Java 中整数缺省是int类型</li>
-<li>long占用8个byte，值域是-9223372036854774808 ~ 9223372036854774807</li>
+<li><h4 id="常用的字符集简介"><a href="#常用的字符集简介" class="headerlink" title="常用的字符集简介"></a>常用的字符集简介</h4><ul>
+<li>ASCI码. ASCI表: hts://baike.baidu.com/item/ASCI/309296#3</li>
+<li>Unicode包含世界上所有常用字符，编码也有几种，包括UTF-8 ( 8-bit Unicode Tasormation Format ) ，UTF-16等。</li>
+<li>Unicode , GBK等所有常用的字符集,都会兼容ASCI。举个例子，字符A在这些所有常用的字符集里，都是对应数字65。</li>
 </ul>
 </li>
-<li><h4 id="浮点-小数-类型"><a href="#浮点-小数-类型" class="headerlink" title="浮点(小数)类型"></a>浮点(小数)类型</h4><ul>
-<li>float有精度，值域复杂（正负34028234668528859811704183484516925440 ）</li>
-<li>double -精度是float的倍，占用8个byte。Java 中整数缺省是double类型。<h2 id="布尔和字符数据类型"><a href="#布尔和字符数据类型" class="headerlink" title="布尔和字符数据类型"></a>布尔和字符数据类型</h2></li>
+<li><h4 id="Java中的字符集"><a href="#Java中的字符集" class="headerlink" title="Java中的字符集"></a>Java中的字符集</h4><ul>
+<li>Java中用的是UTF-16编码的Unicode.</li>
+<li>UTF-16用16个 bit ,即两个byte ,这也是char占用两个byte的原因。当把char转成数字的时候，需要用int。<h2 id="ASCII码和转义符-escape-character"><a href="#ASCII码和转义符-escape-character" class="headerlink" title="ASCII码和转义符( escape character )"></a>ASCII码和转义符( escape character )</h2></li>
 </ul>
 </li>
-<li><h4 id="布尔和字符数据类型-1"><a href="#布尔和字符数据类型-1" class="headerlink" title="布尔和字符数据类型"></a>布尔和字符数据类型</h4><ul>
-<li>boolean 占用4个byte，值域是true，false。</li>
-<li>char 占用2个byte，值域是所有字符（最多65535个）</li>
+<li><h4 id="如何输出特殊字符"><a href="#如何输出特殊字符" class="headerlink" title="如何输出特殊字符"></a>如何输出特殊字符</h4><ul>
+<li>ASCII 码+char，通过ASCII表可以找到需要的字符对应的数字。将这个数字转换为char ,然后输出这个char。ASCI 表: hts://baike .baidu.com/item/ACI/309296#3</li>
+<li>转义符。转义符用来给字符赋值，也可以用在字符串里面，作为字符串中的一个字符。</li>
+</ul>
+</li>
+<li><h4 id="转义符语法和常用的转义符"><a href="#转义符语法和常用的转义符" class="headerlink" title="转义符语法和常用的转义符"></a>转义符语法和常用的转义符</h4><ul>
+<li><code>\n</code>,换行符</li>
+<li><code>\&quot;</code>,双引号</li>
+<li><code>\t</code>,制表符</li>
+<li><code>\xxxx</code> , <code>unicode</code>编码对应的字符。</li>
+</ul>
+</li>
+</ul>
+<h2 id="字符串的“加法”"><a href="#字符串的“加法”" class="headerlink" title="字符串的“加法”"></a>字符串的“加法”</h2><ul>
+<li><h4 id="将变量穿插在字符串中输出"><a href="#将变量穿插在字符串中输出" class="headerlink" title="将变量穿插在字符串中输出"></a>将变量穿插在字符串中输出</h4><ul>
+<li>字符串可以和任何类型进行加法运算，则会将这个值的字符拼接到字夺串上。</li>
+<li>字符串也可以使用+=操作符来拼接</li>
+<li>字符串的加法运算符符合加法运算符本身的优先级</li>
+</ul>
+</li>
+<li><h4 id="字符串不是Java中的基本数据类型"><a href="#字符串不是Java中的基本数据类型" class="headerlink" title="字符串不是Java中的基本数据类型"></a>字符串不是Java中的基本数据类型</h4><ul>
+<li>字符串类型的名字叫做String</li>
+<li>虽然String不是Java 中的基础类型，但是也可以使用类似的语法<code>Stringstr= “bc&quot;;</code>来创建。开始的时候将其当成基础类型,更容易理解。</li>
+<li>String不是Java中的保留字。</li>
+<li>String的加法不会改变原String变量的值,改变其值要用赋值语句</li>
 </ul>
 </li>
 </ul>
@@ -286,7 +304,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/12/Java%E4%B8%AD%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/12/%E5%AD%97%E7%AC%A6%E9%9B%86%E7%BC%96%E7%A0%81%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -300,18 +318,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/08/12/Java%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/08/12/%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B%E8%AF%AD%E5%8F%A5/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Java中的运算符
+          程序执行流程语句
         
       </div>
     </a>
   
   
-    <a href="/2020/08/12/%E7%B1%BB%EF%BC%88class%EF%BC%89%E8%AF%AD%E6%B3%95%E5%85%83%E7%B4%A0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">类（class）语法元素</div>
+    <a href="/2020/08/12/Java%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java中的运算符</div>
       <i class="icon-circle-right"></i>
     </a>
   

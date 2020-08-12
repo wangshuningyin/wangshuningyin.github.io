@@ -150,6 +150,492 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-数组和数组的语法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/12/%E6%95%B0%E7%BB%84%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E8%AF%AD%E6%B3%95/">数组和数组的语法</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/12/%E6%95%B0%E7%BB%84%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E8%AF%AD%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2020-08-12T07:36:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="数组的特点"><a href="#数组的特点" class="headerlink" title="数组的特点"></a>数组的特点</h2><ul>
+<li>数组是相同类型的变量的集合，所有元素的类型都是一样的</li>
+<li>可以指定数组包含的元素个数，最多为int的最大值个</li>
+<li>元素有固定的顺序</li>
+<li>每个元素都有一个固定的编号，称之为索引(index)，从0开始递增，类型为int</li>
+<li>可以像操作变量一样读写数组中的任何一个以安素<h2 id="数组的创建和使用"><a href="#数组的创建和使用" class="headerlink" title="数组的创建和使用"></a>数组的创建和使用</h2></li>
+<li>数组元素类型[] 变量名 = new 数组元素类型[数组长度]</li>
+<li>变量名[索引] 可以使用这个变量，可以读取也可以给它赋值</li>
+<li><h5 id="以数组名与实的来理解数组"><a href="#以数组名与实的来理解数组" class="headerlink" title="以数组名与实的来理解数组"></a>以数组名与实的来理解数组</h5><ul>
+<li>数组的”实”是一块地址连续的内存，就像是编号连续的一沓白纸。</li>
+<li>数组的名，就是这个块连续内存的第一个内存的地址。</li>
+<li>数组的交量和基本交量一样，本身是个地址。但是与基本变量不一样的是这个地址的值数组的“名”，也就是数组的第一个地址。</li>
+</ul>
+</li>
+<li><h5 id="数组-数组变星-数组的实体"><a href="#数组-数组变星-数组的实体" class="headerlink" title="数组=数组变星+数组的实体"></a>数组=数组变星+数组的实体</h5><ul>
+<li>数组变量(索引)就是在数组原有地址的基础上，加上索引，获得想要的元素</li>
+<li>所以索引是从0开始的，因为数组变量的地址就是数组第一个元素的地址，不需要加</li>
+</ul>
+</li>
+<li><h5 id="数组的长度"><a href="#数组的长度" class="headerlink" title="数组的长度"></a>数组的长度</h5><ul>
+<li>数组变量.length可以获得数组的长度</li>
+<li>数组创建之后，长度不可以改变</li>
+</ul>
+</li>
+<li><h5 id="数组索引过界和初始值"><a href="#数组索引过界和初始值" class="headerlink" title="数组索引过界和初始值"></a>数组索引过界和初始值</h5><ul>
+<li>访问数组过界出错的例子，数组出界的错误叫做<code>Index0utofeoundException</code></li>
+<li>如果没有把握数组是否会出界，可以把索引和数组长度做比较，注意索引是从0开始的，不是从1开始的</li>
+<li>数组里每个元素的都有初始值，初始值和类型有关。对于数字类型，初始值是 0，对于boolean类型，初始值是false.</li>
+</ul>
+</li>
+<li><h5 id="让变量指向新的数组"><a href="#让变量指向新的数组" class="headerlink" title="让变量指向新的数组"></a>让变量指向新的数组</h5><ul>
+<li>数组变量可以指向新的数组实体。这时候，数组变量的值就是新的数组实体的地址了。这种数组变量的赋值操作，叫做让变量指向新的数组。</li>
+<li>如果没有别的数组变量指向原来数组实体，也就是说 ，如果没有数组变量 “记得”原来数组的地址，原来的数组实体就再也不可访问了，也就好像“消失”了。<ul>
+<li>对于非基本类型的变量，计算机都要通过这种“两级跳”的方式来访问。基本类型变量，一跳就可以。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/12/%E6%95%B0%E7%BB%84%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E8%AF%AD%E6%B3%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-程序执行流程语句" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/12/%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B%E8%AF%AD%E5%8F%A5/">程序执行流程语句</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/12/%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B%E8%AF%AD%E5%8F%A5/" class="archive-article-date">
+  	<time datetime="2020-08-12T07:35:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="if-else语法"><a href="#if-else语法" class="headerlink" title="if-else语法"></a>if-else语法</h2><ul>
+<li>if-else语法，只有一个一个语块被执行<ul>
+<li>if和else都是java中的关键字</li>
+<li>把if-else看作一个表达式，程序整体还是顺序执行的</li>
+<li>使用if-else来多买两个包子<br>下面就从买包子问题来理解： 买三个包子， 如果是刚出笼的热包子呢，就多买两个呢？<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class BuyBaoZi &#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        int baozi &#x3D; 3;</span><br><span class="line">        boolean iSHotBaozi &#x3D; false;</span><br><span class="line">        System.out.println(&quot;买了&quot;+baozi+&quot;个肉包子&quot;);</span><br><span class="line">        if (iSHotBaozi)&#123;</span><br><span class="line">            baozi &#x3D; baozi + 2;</span><br><span class="line">            System.out.println(&quot;包子刚出笼，买了&quot;+baozi+&quot;个肉包子&quot;);</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            System.out.println(&quot;买了&quot;+baozi+&quot;个肉包子&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="if-else的嵌套"><a href="#if-else的嵌套" class="headerlink" title="if-else的嵌套"></a>if-else的嵌套</h2>求最大的数</li>
+<li>if-else就是一个语句，可以是另一个语句的一部分，也可以是if-else的一部分，即嵌套。<br>下从求a，b，c三个数的最大数来理解：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">public class JudgeSize &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int a &#x3D; 99;</span><br><span class="line">        int b &#x3D; 88;</span><br><span class="line">        int c &#x3D; 99;</span><br><span class="line">        if (a &#x3D;&#x3D; b &amp;&amp; b &#x3D;&#x3D; c) &#123;</span><br><span class="line">            System.out.println(&quot;a,b,c的值相同&quot;);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            if (a &gt; b) &#123;</span><br><span class="line">                if (a &gt; c) &#123;</span><br><span class="line">                    System.out.println(&quot;a是最大的值，为&quot; + a);</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    if (a &#x3D;&#x3D; c) &#123;</span><br><span class="line">                        System.out.println(&quot;a和c的最大值，为&quot; + a);</span><br><span class="line">                    &#125; else &#123;</span><br><span class="line">                        System.out.println(&quot;c是最大值，为&quot; + c);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                if (b &gt; c) &#123;</span><br><span class="line">                    if (a &#x3D;&#x3D; b) &#123;</span><br><span class="line">                        System.out.println(&quot;a和b等大，为&quot; + a);</span><br><span class="line">                    &#125; else &#123;</span><br><span class="line">                        System.out.println(&quot;b最大，为&quot; + b);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    if (c &#x3D;&#x3D; b) &#123;</span><br><span class="line">                        System.out.println(&quot;b和c等大，为&quot; + c);</span><br><span class="line">                    &#125; else &#123;</span><br><span class="line">                        System.out.println(&quot;c最大，为&quot; + c);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="循环for语句"><a href="#循环for语句" class="headerlink" title="循环for语句"></a>循环for语句</h2></li>
+<li>使用for语句让程序简洁</li>
+<li>让程序在满足某条件时，重复执行某个代码块，for是Java中的关键字</li>
+<li>初始语句在for循环开始前执行一次，以后不再执行；循环体条件表达式在每次循环体执行前会执行，如果为true ，则执行循环体，否则循环结束；循环体后语句会在每次循环执行后被执行；<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for (初始语句;循环体条件表达式;循环体后语句) &#123;</span><br><span class="line">     for循环</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+下面来看下for语句的简单例程：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public class Print26Chars &#123;</span><br><span class="line">    public static  void main(String[] args)&#123;</span><br><span class="line">        char ch &#x3D; &#39;A&#39;;</span><br><span class="line">        int num &#x3D; ch;</span><br><span class="line">        for (int i &#x3D; 0;i&lt;26;i++)&#123;</span><br><span class="line">            System.out.println((num+i) + &quot;\t&quot;+(char)(num+i));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Break语句"><a href="#Break语句" class="headerlink" title="Break语句"></a>Break语句</h2></li>
+<li>break语句可以结束循环<br>下面来看下在求整除程序中使用break提前结束循环：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">public class FindDiv &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int div &#x3D; 100;</span><br><span class="line">        int divsor &#x3D; 2000000000;</span><br><span class="line">        int found &#x3D; 0;</span><br><span class="line">        int n &#x3D; 10;</span><br><span class="line">        String start &#x3D; &quot;从&quot; + div + &quot;开始&quot;;</span><br><span class="line">        while (found &lt; n)&#123;</span><br><span class="line">            if (div &lt; 0)&#123;</span><br><span class="line">                System.out.println(&quot;被除数溢出，计算结束&quot;);</span><br><span class="line">            break;</span><br><span class="line">            &#125;</span><br><span class="line">            if (div%divsor &#x3D;&#x3D; 0)&#123;</span><br><span class="line">                found++;</span><br><span class="line">                System.out.println(div + &quot;可以整除&quot; + divsor + &quot;，商是&quot; + (div &#x2F; divsor));</span><br><span class="line">            &#125;</span><br><span class="line">            div++;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(start+&quot;,共找到&quot;+found+&quot;个可以整除&quot;+divsor+&quot;的数。&quot;);</span><br><span class="line">        System.out.println(div);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="continue语句"><a href="#continue语句" class="headerlink" title="continue语句"></a>continue语句</h2></li>
+<li>跳过不符合条件的循环</li>
+<li>continue语句可以结束当次循环的执行，开始下一次循环体的执行<h2 id="while语句"><a href="#while语句" class="headerlink" title="while语句"></a>while语句</h2></li>
+<li>条件表达式结果是一个boolean值，如果为true，则执行循环体，如果为false，则循环结束。</li>
+<li>while循环体是一个代码块，所以while循环也是可以嵌套别的语句，包括while语句，for语句，if-else语句。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">while（条件表达式）&#123;</span><br><span class="line">       while循环体;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>do-while语句循环体至少执行一次。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">do &#123;</span><br><span class="line">      while循环体;</span><br><span class="line">&#125;</span><br><span class="line">while（条件表达式）;</span><br></pre></td></tr></table></figure>
+<h2 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h2></li>
+<li>switch语句的语法<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">switch(用于比较的int值)&#123;</span><br><span class="line">    case 目标值1，对应一个 if else(xxx):</span><br><span class="line">           匹配后可以执行的语句 </span><br><span class="line">    case 目标值2，不可以于别的case子句重复:</span><br><span class="line">           匹配后可以执行的语句</span><br><span class="line">    default(对应最后的else，可选):</span><br><span class="line">           匹配后可以执行的语句</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>switch语句中用于比较的值，必须是int类型</li>
+<li>switch语句是适用于有固定多个目标匹配值，然后执行不同的逻辑情况</li>
+<li>必须使用break语句显示的结束一个case子句，否则switch第一个match的case语句开始执行直到遇到break语句或者switch语句结束</li>
+<li>default子句是可选的，如果所有的case语句都没有匹配上，才会执行default中的代码。</li>
+<li>switch语句例程<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">public class SwitchNum &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int n &#x3D; 99;</span><br><span class="line"></span><br><span class="line">        String str &#x3D; n + &quot;对应的中文数字是：&quot;;</span><br><span class="line">        switch (n)&#123;</span><br><span class="line">            case 1:</span><br><span class="line">                str+&#x3D;&quot;壹·&quot;;</span><br><span class="line">                break;</span><br><span class="line">            case 2:</span><br><span class="line">                str+&#x3D;&quot;贰&quot;;</span><br><span class="line">                break;</span><br><span class="line">            case 3:</span><br><span class="line">                str+&#x3D;&quot;叁&quot;;</span><br><span class="line">                break;</span><br><span class="line">            case 4:</span><br><span class="line">                str+&#x3D;&quot;肆&quot;;</span><br><span class="line">                break;</span><br><span class="line">            case 5:</span><br><span class="line">                str+&#x3D;&quot;伍&quot;;</span><br><span class="line">                break;</span><br><span class="line">            case 6:</span><br><span class="line">                str+&#x3D;&quot;陆&quot;;</span><br><span class="line">                break;</span><br><span class="line">            case 7:</span><br><span class="line">                str+&#x3D;&quot;柒&quot;;</span><br><span class="line">                break;</span><br><span class="line">            case 8:</span><br><span class="line">                str+&#x3D;&quot;扒&quot;;</span><br><span class="line">                break;</span><br><span class="line">            case 9:</span><br><span class="line">                str+&#x3D;&quot;玖&quot;;</span><br><span class="line">            default:</span><br><span class="line">                System.out.println(&quot;错误的值&quot;+n+&quot;。值需要在大于等于1，小于等于9之间。&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(str);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/12/%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B%E8%AF%AD%E5%8F%A5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-字符集编码和字符串" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/12/%E5%AD%97%E7%AC%A6%E9%9B%86%E7%BC%96%E7%A0%81%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/">字符集编码和字符串</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/12/%E5%AD%97%E7%AC%A6%E9%9B%86%E7%BC%96%E7%A0%81%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="archive-article-date">
+  	<time datetime="2020-08-12T07:35:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="什么是字符集和编码"><a href="#什么是字符集和编码" class="headerlink" title="什么是字符集和编码"></a>什么是字符集和编码</h2><ul>
+<li><h4 id="什么是字符集-Charset"><a href="#什么是字符集-Charset" class="headerlink" title="什么是字符集( Charset )"></a>什么是字符集( Charset )</h4><ul>
+<li>字符集就是字符的集合。-般会包含一种语言的字符。比如GBK ，是包含所有常用汉字字符的字符集。ASCII 是包含英文字符的字符集。<ul>
+<li>字符就是Java中的char , char是character的简写。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h4 id="什么是编码-Encoding"><a href="#什么是编码-Encoding" class="headerlink" title="什么是编码( Encoding )"></a>什么是编码( Encoding )</h4><ul>
+<li>char代表一个字符，char的本质也是数字。将数字映射到字符，就叫编码。</li>
+<li>将一个字符集映射到数字 ,就是给这个字符集编码。编码是有标准的，所有的计算机系统按照同一个编码标准执行。<ul>
+<li>有时候编码和字符集会混用。<h2 id="编码和字符集介绍"><a href="#编码和字符集介绍" class="headerlink" title="编码和字符集介绍"></a>编码和字符集介绍</h2></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h4 id="常用的字符集简介"><a href="#常用的字符集简介" class="headerlink" title="常用的字符集简介"></a>常用的字符集简介</h4><ul>
+<li>ASCI码. ASCI表: hts://baike.baidu.com/item/ASCI/309296#3</li>
+<li>Unicode包含世界上所有常用字符，编码也有几种，包括UTF-8 ( 8-bit Unicode Tasormation Format ) ，UTF-16等。</li>
+<li>Unicode , GBK等所有常用的字符集,都会兼容ASCI。举个例子，字符A在这些所有常用的字符集里，都是对应数字65。</li>
+</ul>
+</li>
+<li><h4 id="Java中的字符集"><a href="#Java中的字符集" class="headerlink" title="Java中的字符集"></a>Java中的字符集</h4><ul>
+<li>Java中用的是UTF-16编码的Unicode.</li>
+<li>UTF-16用16个 bit ,即两个byte ,这也是char占用两个byte的原因。当把char转成数字的时候，需要用int。<h2 id="ASCII码和转义符-escape-character"><a href="#ASCII码和转义符-escape-character" class="headerlink" title="ASCII码和转义符( escape character )"></a>ASCII码和转义符( escape character )</h2></li>
+</ul>
+</li>
+<li><h4 id="如何输出特殊字符"><a href="#如何输出特殊字符" class="headerlink" title="如何输出特殊字符"></a>如何输出特殊字符</h4><ul>
+<li>ASCII 码+char，通过ASCII表可以找到需要的字符对应的数字。将这个数字转换为char ,然后输出这个char。ASCI 表: hts://baike .baidu.com/item/ACI/309296#3</li>
+<li>转义符。转义符用来给字符赋值，也可以用在字符串里面，作为字符串中的一个字符。</li>
+</ul>
+</li>
+<li><h4 id="转义符语法和常用的转义符"><a href="#转义符语法和常用的转义符" class="headerlink" title="转义符语法和常用的转义符"></a>转义符语法和常用的转义符</h4><ul>
+<li><code>\n</code>,换行符</li>
+<li><code>\&quot;</code>,双引号</li>
+<li><code>\t</code>,制表符</li>
+<li><code>\xxxx</code> , <code>unicode</code>编码对应的字符。</li>
+</ul>
+</li>
+</ul>
+<h2 id="字符串的“加法”"><a href="#字符串的“加法”" class="headerlink" title="字符串的“加法”"></a>字符串的“加法”</h2><ul>
+<li><h4 id="将变量穿插在字符串中输出"><a href="#将变量穿插在字符串中输出" class="headerlink" title="将变量穿插在字符串中输出"></a>将变量穿插在字符串中输出</h4><ul>
+<li>字符串可以和任何类型进行加法运算，则会将这个值的字符拼接到字夺串上。</li>
+<li>字符串也可以使用+=操作符来拼接</li>
+<li>字符串的加法运算符符合加法运算符本身的优先级</li>
+</ul>
+</li>
+<li><h4 id="字符串不是Java中的基本数据类型"><a href="#字符串不是Java中的基本数据类型" class="headerlink" title="字符串不是Java中的基本数据类型"></a>字符串不是Java中的基本数据类型</h4><ul>
+<li>字符串类型的名字叫做String</li>
+<li>虽然String不是Java 中的基础类型，但是也可以使用类似的语法<code>Stringstr= “bc&quot;;</code>来创建。开始的时候将其当成基础类型,更容易理解。</li>
+<li>String不是Java中的保留字。</li>
+<li>String的加法不会改变原String变量的值,改变其值要用赋值语句</li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/12/%E5%AD%97%E7%AC%A6%E9%9B%86%E7%BC%96%E7%A0%81%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Java中的运算符" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/12/Java%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6/">Java中的运算符</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/12/Java%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6/" class="archive-article-date">
+  	<time datetime="2020-08-12T07:35:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="什么是运算符"><a href="#什么是运算符" class="headerlink" title="什么是运算符"></a>什么是运算符</h2><ul>
+<li><p>运算符对一个或者多个值进行运算，并得出一个运算结果。</p>
+</li>
+<li><p>运算符的运算结果类型有的是固定的，有时候会根据被计算的值变化。比如两个int 相加，结果的类型就是int。两个byte 相加，返回值的类型也是int。<br><code>混淆点:除赋值运算符外，运算符本身不会更改变量的值。</code></p>
+<h2 id="比较运算符和布尔运算符"><a href="#比较运算符和布尔运算符" class="headerlink" title="比较运算符和布尔运算符"></a>比较运算符和布尔运算符</h2><h4 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h4></li>
+<li><p><code>&gt;</code></p>
+</li>
+<li><p><code>&gt;=</code></p>
+</li>
+<li><p><code>&lt;</code></p>
+</li>
+<li><p><code>&lt;=</code></p>
+</li>
+<li><p><code>！=</code></p>
+</li>
+<li><p><code>==</code></p>
+<h4 id="布尔运算"><a href="#布尔运算" class="headerlink" title="布尔运算"></a>布尔运算</h4></li>
+<li><p><code>！</code></p>
+</li>
+<li><p><code>&amp;</code></p>
+</li>
+<li><p><code>&amp;&amp;</code></p>
+</li>
+<li><p><code>|</code></p>
+</li>
+<li><p><code>||</code></p>
+<h4 id="运算符优先级"><a href="#运算符优先级" class="headerlink" title="运算符优先级"></a>运算符优先级</h4></li>
+<li><p><code>（）</code></p>
+</li>
+<li><p><code>！</code></p>
+</li>
+<li><p><code>*, /, %</code></p>
+</li>
+<li><p><code>+, -</code></p>
+</li>
+<li><p><code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code>,<code>&lt;=</code></p>
+</li>
+<li><p><code>==</code></p>
+</li>
+<li><p><code>!=</code></p>
+</li>
+<li><p><code>&amp;, &amp;&amp;, |, ||</code></p>
+</li>
+<li><p><code>=</code></p>
+<h2 id="字面值的八进制和十六进制"><a href="#字面值的八进制和十六进制" class="headerlink" title="字面值的八进制和十六进制"></a>字面值的八进制和十六进制</h2></li>
+<li><h4 id="以0开头的整数为八进制"><a href="#以0开头的整数为八进制" class="headerlink" title="以0开头的整数为八进制"></a>以0开头的整数为八进制</h4><ul>
+<li>05就是十进制的5</li>
+<li>011就是十进制的9</li>
+</ul>
+</li>
+<li><h4 id="以0x开头的整数位十六进制"><a href="#以0x开头的整数位十六进制" class="headerlink" title="以0x开头的整数位十六进制"></a>以0x开头的整数位十六进制</h4><ul>
+<li>0xF就是十进制的15</li>
+<li>0x11就是十进制的17<h2 id="按位运算符"><a href="#按位运算符" class="headerlink" title="按位运算符"></a>按位运算符</h2></li>
+</ul>
+</li>
+<li><h4 id="按位运算符-1"><a href="#按位运算符-1" class="headerlink" title="按位运算符"></a>按位运算符</h4><ul>
+<li>按位并(AND) :&amp;</li>
+<li>按位或(OR) : |<ul>
+<li>按位异或(XOR) : ^</li>
+<li>按位取反:~<h2 id="位移运算符"><a href="#位移运算符" class="headerlink" title="位移运算符"></a>位移运算符</h2></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h4 id="位移运算符-1"><a href="#位移运算符-1" class="headerlink" title="位移运算符"></a>位移运算符</h4><ul>
+<li><code>&gt;&gt;</code> : 符号位不动，其余位右移，符号位后边正数补0，负数补1。又称带符号右移</li>
+<li><code>&gt;&gt;&gt;</code>: 符号位一起右移，左边补0，又称无符号右移<ul>
+<li><code>&lt;&lt;</code>: 左移，右边补0。左移没有带符号位一说，因为符号位在最左侧<h2 id="位运算符不会改变原来变量的值"><a href="#位运算符不会改变原来变量的值" class="headerlink" title="位运算符不会改变原来变量的值"></a>位运算符不会改变原来变量的值</h2></li>
+<li><h4 id="按位运算符不会改变原本的变量的值"><a href="#按位运算符不会改变原本的变量的值" class="headerlink" title="按位运算符不会改变原本的变量的值"></a>按位运算符不会改变原本的变量的值</h4></li>
+<li><h4 id="位移运算符不会改变原本的变量的值"><a href="#位移运算符不会改变原本的变量的值" class="headerlink" title="位移运算符不会改变原本的变量的值"></a>位移运算符不会改变原本的变量的值</h4><h2 id="位运算符用处"><a href="#位运算符用处" class="headerlink" title="位运算符用处"></a>位运算符用处</h2><h4 id="按位运算符-2"><a href="#按位运算符-2" class="headerlink" title="按位运算符"></a>按位运算符</h4></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>掩码（MASK）</p>
+<h4 id="位移算符"><a href="#位移算符" class="headerlink" title="位移算符"></a>位移算符</h4></li>
+<li><p>高效除以2</p>
+<h2 id="数据类型自动转换"><a href="#数据类型自动转换" class="headerlink" title="数据类型自动转换"></a>数据类型自动转换</h2></li>
+<li><h4 id="自动类型转换"><a href="#自动类型转换" class="headerlink" title="自动类型转换"></a>自动类型转换</h4><ul>
+<li>不会出现问题的类型转换，编程语言可以做自动类型转换，比如低精度的数字向高精度的数字转换。</li>
+<li>自动类型转换可以发生在算数运算，也可以发生在赋值。</li>
+</ul>
+</li>
+<li><h4 id="数值精度顺序-double-gt-float-gt-long-gt-int-gt-short-gt-byte"><a href="#数值精度顺序-double-gt-float-gt-long-gt-int-gt-short-gt-byte" class="headerlink" title="数值精度顺序: double&gt;float&gt;long&gt;int&gt; short&gt;byte"></a>数值精度顺序: double&gt;float&gt;long&gt;int&gt; short&gt;byte</h4></li>
+<li><h4 id="char-可以转换为int"><a href="#char-可以转换为int" class="headerlink" title="char 可以转换为int"></a>char 可以转换为int</h4><ul>
+<li>虽然同样是两个brte,但是因为char是无符号数，值域超出了short 可以表示的范围，所以不可以自动转为short.<h2 id="强制数据类型转换"><a href="#强制数据类型转换" class="headerlink" title="强制数据类型转换"></a>强制数据类型转换</h2></li>
+</ul>
+</li>
+<li><h4 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h4><ul>
+<li>可能出现问题的类型转换,需要使用强制类型转换，比如高精度数值向低精度数值转换。</li>
+<li>强制类型转换也是操作符</li>
+<li>语法是用小括号括起来的目标类型放在被转换的值前面<ul>
+<li>强制转换会造成数据精度丢失</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h4 id="数值溢出"><a href="#数值溢出" class="headerlink" title="数值溢出"></a>数值溢出</h4><ul>
+<li>数值计算一旦溢出。结果将失去其原有意义。比如，两个正数会加出负数。</li>
+<li>要对能够处理的值有大概的估计。<h2 id="从数值计算溢出理解程序员和编程语言责任的分界线"><a href="#从数值计算溢出理解程序员和编程语言责任的分界线" class="headerlink" title="从数值计算溢出理解程序员和编程语言责任的分界线"></a>从数值计算溢出理解程序员和编程语言责任的分界线</h2></li>
+</ul>
+</li>
+<li><h4 id="编程语言的作用"><a href="#编程语言的作用" class="headerlink" title="编程语言的作用"></a>编程语言的作用</h4><ul>
+<li>编程语言负责按照语法执行</li>
+<li>编程语言负责和计算机交互</li>
+</ul>
+</li>
+<li><h4 id="程序员的任务"><a href="#程序员的任务" class="headerlink" title="程序员的任务"></a>程序员的任务</h4><ul>
+<li>程序员负责理解问题</li>
+<li>程序员负责理解程序。并将问题转换为程序</li>
+<li>偏程语言不负责解决问题，程序员才负责解决问题</li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/12/Java%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Java中的基本数据类型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -720,81 +1206,10 @@ tags:
 
 
   
-    <article id="post-hexo博客搭建文档" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/05/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%96%87%E6%A1%A3/">hexo博客搭建文档</a>
-    </h1>
-  
-
-        
-        <a href="/2015/11/05/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%96%87%E6%A1%A3/" class="archive-article-date">
-  	<time datetime="2015-11-05T04:47:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-11-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2015/11/05/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%96%87%E6%A1%A3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    </nav>
   
 
 

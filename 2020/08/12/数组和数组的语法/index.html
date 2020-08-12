@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Java中的基本数据类型 | Hexo</title>
+  <title>数组和数组的语法 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="认识二进制 十进制 每一位可以是0～9这10个值，到10进位。一百用十进制表示就是100，十就10。   二进制 每一位可以是0和1这两个值，到2进位。一百用二进制表示就1100100，十就是1010.   十六进制 每一位可以是0~F这15个值，到16进位。 一百用十六进制表示就是64, 十就是A.   bit和byte 一 个二进制的位叫做个bit， 俗称小b。宽带中的单位，都是小b 八个二进">
+  <meta name="description" content="数组的特点 数组是相同类型的变量的集合，所有元素的类型都是一样的 可以指定数组包含的元素个数，最多为int的最大值个 元素有固定的顺序 每个元素都有一个固定的编号，称之为索引(index)，从0开始递增，类型为int 可以像操作变量一样读写数组中的任何一个以安素数组的创建和使用 数组元素类型[] 变量名 &#x3D; new 数组元素类型[数组长度] 变量名[索引] 可以使用这个变量，可以读取也可以给它赋值">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java中的基本数据类型">
-<meta property="og:url" content="http://yoursite.com/2020/08/12/Java%E4%B8%AD%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/index.html">
+<meta property="og:title" content="数组和数组的语法">
+<meta property="og:url" content="http://yoursite.com/2020/08/12/%E6%95%B0%E7%BB%84%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E8%AF%AD%E6%B3%95/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="认识二进制 十进制 每一位可以是0～9这10个值，到10进位。一百用十进制表示就是100，十就10。   二进制 每一位可以是0和1这两个值，到2进位。一百用二进制表示就1100100，十就是1010.   十六进制 每一位可以是0~F这15个值，到16进位。 一百用十六进制表示就是64, 十就是A.   bit和byte 一 个二进制的位叫做个bit， 俗称小b。宽带中的单位，都是小b 八个二进">
+<meta property="og:description" content="数组的特点 数组是相同类型的变量的集合，所有元素的类型都是一样的 可以指定数组包含的元素个数，最多为int的最大值个 元素有固定的顺序 每个元素都有一个固定的编号，称之为索引(index)，从0开始递增，类型为int 可以像操作变量一样读写数组中的任何一个以安素数组的创建和使用 数组元素类型[] 变量名 &#x3D; new 数组元素类型[数组长度] 变量名[索引] 可以使用这个变量，可以读取也可以给它赋值">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-08-12T07:22:51.000Z">
-<meta property="article:modified_time" content="2020-08-12T07:30:29.923Z">
+<meta property="article:published_time" content="2020-08-12T07:36:11.000Z">
+<meta property="article:modified_time" content="2020-08-12T07:41:14.596Z">
 <meta property="article:author" content="NingSpeals">
 <meta name="twitter:card" content="summary">
   
@@ -150,60 +150,62 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java中的基本数据类型" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-数组和数组的语法" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Java中的基本数据类型
+      数组和数组的语法
     </h1>
   
 
         
-        <a href="/2020/08/12/Java%E4%B8%AD%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="archive-article-date">
-  	<time datetime="2020-08-12T07:22:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-12</time>
+        <a href="/2020/08/12/%E6%95%B0%E7%BB%84%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E8%AF%AD%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2020-08-12T07:36:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="认识二进制"><a href="#认识二进制" class="headerlink" title="认识二进制"></a>认识二进制</h2><ul>
-<li><h4 id="十进制"><a href="#十进制" class="headerlink" title="十进制"></a>十进制</h4><ul>
-<li>每一位可以是0～9这10个值，到10进位。一百用十进制表示就是100，十就10。</li>
+        <h2 id="数组的特点"><a href="#数组的特点" class="headerlink" title="数组的特点"></a>数组的特点</h2><ul>
+<li>数组是相同类型的变量的集合，所有元素的类型都是一样的</li>
+<li>可以指定数组包含的元素个数，最多为int的最大值个</li>
+<li>元素有固定的顺序</li>
+<li>每个元素都有一个固定的编号，称之为索引(index)，从0开始递增，类型为int</li>
+<li>可以像操作变量一样读写数组中的任何一个以安素<h2 id="数组的创建和使用"><a href="#数组的创建和使用" class="headerlink" title="数组的创建和使用"></a>数组的创建和使用</h2></li>
+<li>数组元素类型[] 变量名 = new 数组元素类型[数组长度]</li>
+<li>变量名[索引] 可以使用这个变量，可以读取也可以给它赋值</li>
+<li><h5 id="以数组名与实的来理解数组"><a href="#以数组名与实的来理解数组" class="headerlink" title="以数组名与实的来理解数组"></a>以数组名与实的来理解数组</h5><ul>
+<li>数组的”实”是一块地址连续的内存，就像是编号连续的一沓白纸。</li>
+<li>数组的名，就是这个块连续内存的第一个内存的地址。</li>
+<li>数组的交量和基本交量一样，本身是个地址。但是与基本变量不一样的是这个地址的值数组的“名”，也就是数组的第一个地址。</li>
 </ul>
 </li>
-<li><h4 id="二进制"><a href="#二进制" class="headerlink" title="二进制"></a>二进制</h4><ul>
-<li>每一位可以是0和1这两个值，到2进位。一百用二进制表示就1100100，十就是1010.</li>
+<li><h5 id="数组-数组变星-数组的实体"><a href="#数组-数组变星-数组的实体" class="headerlink" title="数组=数组变星+数组的实体"></a>数组=数组变星+数组的实体</h5><ul>
+<li>数组变量(索引)就是在数组原有地址的基础上，加上索引，获得想要的元素</li>
+<li>所以索引是从0开始的，因为数组变量的地址就是数组第一个元素的地址，不需要加</li>
 </ul>
 </li>
-<li><h4 id="十六进制"><a href="#十六进制" class="headerlink" title="十六进制"></a>十六进制</h4><ul>
-<li>每一位可以是0~F这15个值，到16进位。 一百用十六进制表示就是64, 十就是A.</li>
+<li><h5 id="数组的长度"><a href="#数组的长度" class="headerlink" title="数组的长度"></a>数组的长度</h5><ul>
+<li>数组变量.length可以获得数组的长度</li>
+<li>数组创建之后，长度不可以改变</li>
 </ul>
 </li>
-<li><h4 id="bit和byte"><a href="#bit和byte" class="headerlink" title="bit和byte"></a>bit和byte</h4><ul>
-<li>一 个二进制的位叫做个bit， 俗称小b。宽带中的单位，都是小b</li>
-<li>八个二进制的位，组成一个byte，俗称大B。硬盘等存储的单位，都是大B</li>
-<li>Byte是计算机中基本的街量存储的单位，计算机在对外使用时不会用小b作为划分存储的单位。<h2 id="数字的基本数据类型"><a href="#数字的基本数据类型" class="headerlink" title="数字的基本数据类型"></a>数字的基本数据类型</h2></li>
+<li><h5 id="数组索引过界和初始值"><a href="#数组索引过界和初始值" class="headerlink" title="数组索引过界和初始值"></a>数组索引过界和初始值</h5><ul>
+<li>访问数组过界出错的例子，数组出界的错误叫做<code>Index0utofeoundException</code></li>
+<li>如果没有把握数组是否会出界，可以把索引和数组长度做比较，注意索引是从0开始的，不是从1开始的</li>
+<li>数组里每个元素的都有初始值，初始值和类型有关。对于数字类型，初始值是 0，对于boolean类型，初始值是false.</li>
 </ul>
 </li>
-<li><h4 id="整数类型"><a href="#整数类型" class="headerlink" title="整数类型"></a>整数类型</h4><ul>
-<li>byte占用1个byte，值域是-128 ~ 127</li>
-<li>short占用2个byte，值域是-32768 ~ 32767</li>
-<li>int占用4个byte，值域是-2147483648 ~ 2147483647.。Java 中整数缺省是int类型</li>
-<li>long占用8个byte，值域是-9223372036854774808 ~ 9223372036854774807</li>
+<li><h5 id="让变量指向新的数组"><a href="#让变量指向新的数组" class="headerlink" title="让变量指向新的数组"></a>让变量指向新的数组</h5><ul>
+<li>数组变量可以指向新的数组实体。这时候，数组变量的值就是新的数组实体的地址了。这种数组变量的赋值操作，叫做让变量指向新的数组。</li>
+<li>如果没有别的数组变量指向原来数组实体，也就是说 ，如果没有数组变量 “记得”原来数组的地址，原来的数组实体就再也不可访问了，也就好像“消失”了。<ul>
+<li>对于非基本类型的变量，计算机都要通过这种“两级跳”的方式来访问。基本类型变量，一跳就可以。</li>
 </ul>
 </li>
-<li><h4 id="浮点-小数-类型"><a href="#浮点-小数-类型" class="headerlink" title="浮点(小数)类型"></a>浮点(小数)类型</h4><ul>
-<li>float有精度，值域复杂（正负34028234668528859811704183484516925440 ）</li>
-<li>double -精度是float的倍，占用8个byte。Java 中整数缺省是double类型。<h2 id="布尔和字符数据类型"><a href="#布尔和字符数据类型" class="headerlink" title="布尔和字符数据类型"></a>布尔和字符数据类型</h2></li>
-</ul>
-</li>
-<li><h4 id="布尔和字符数据类型-1"><a href="#布尔和字符数据类型-1" class="headerlink" title="布尔和字符数据类型"></a>布尔和字符数据类型</h4><ul>
-<li>boolean 占用4个byte，值域是true，false。</li>
-<li>char 占用2个byte，值域是所有字符（最多65535个）</li>
 </ul>
 </li>
 </ul>
@@ -286,7 +288,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/12/Java%E4%B8%AD%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/12/%E6%95%B0%E7%BB%84%E5%92%8C%E6%95%B0%E7%BB%84%E7%9A%84%E8%AF%AD%E6%B3%95/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -300,18 +302,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/08/12/Java%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Java中的运算符
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/08/12/%E7%B1%BB%EF%BC%88class%EF%BC%89%E8%AF%AD%E6%B3%95%E5%85%83%E7%B4%A0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">类（class）语法元素</div>
+    <a href="/2020/08/12/%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B%E8%AF%AD%E5%8F%A5/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">程序执行流程语句</div>
       <i class="icon-circle-right"></i>
     </a>
   
