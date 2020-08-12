@@ -6,22 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Java编程基础环境搭建（macOS） | Hexo</title>
+  <title>字符集编码和字符串 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安装Java 下载JDK（java Development Kit）搜索JDK并下载 检测JDK安装是否成功  1.运行java命令：java -version2.运行javac命令  下载 sublimeText编辑器，编写HelloWorld程序12345public class HelloWorld&amp;#123;	public static void main(String[] args)&amp;#">
+  <meta name="description" content="什么是字符集和编码 什么是字符集( Charset ) 字符集就是字符的集合。-般会包含一种语言的字符。比如GBK ，是包含所有常用汉字字符的字符集。ASCII 是包含英文字符的字符集。 字符就是Java中的char , char是character的简写。     什么是编码( Encoding ) char代表一个字符，char的本质也是数字。将数字映射到字符，就叫编码。 将一个字符集映射到数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java编程基础环境搭建（macOS）">
-<meta property="og:url" content="http://yoursite.com/2020/08/12/Java%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%EF%BC%88macOS%EF%BC%89/index.html">
+<meta property="og:title" content="字符集编码和字符串">
+<meta property="og:url" content="http://yoursite.com/2020/08/08/%E5%AD%97%E7%AC%A6%E9%9B%86%E7%BC%96%E7%A0%81%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="安装Java 下载JDK（java Development Kit）搜索JDK并下载 检测JDK安装是否成功  1.运行java命令：java -version2.运行javac命令  下载 sublimeText编辑器，编写HelloWorld程序12345public class HelloWorld&amp;#123;	public static void main(String[] args)&amp;#">
+<meta property="og:description" content="什么是字符集和编码 什么是字符集( Charset ) 字符集就是字符的集合。-般会包含一种语言的字符。比如GBK ，是包含所有常用汉字字符的字符集。ASCII 是包含英文字符的字符集。 字符就是Java中的char , char是character的简写。     什么是编码( Encoding ) char代表一个字符，char的本质也是数字。将数字映射到字符，就叫编码。 将一个字符集映射到数">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/6152450-48dec0d8dade5298.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/440">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/6152450-1024d102f8757396.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/440">
-<meta property="article:published_time" content="2020-08-12T07:13:22.000Z">
-<meta property="article:modified_time" content="2020-08-12T07:16:50.256Z">
+<meta property="article:published_time" content="2020-08-08T07:35:29.000Z">
+<meta property="article:modified_time" content="2020-08-12T07:55:11.630Z">
 <meta property="article:author" content="NingSpeals">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/6152450-48dec0d8dade5298.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/440">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -153,37 +150,80 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java编程基础环境搭建（macOS）" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-字符集编码和字符串" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Java编程基础环境搭建（macOS）
+      字符集编码和字符串
     </h1>
   
 
         
-        <a href="/2020/08/12/Java%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%EF%BC%88macOS%EF%BC%89/" class="archive-article-date">
-  	<time datetime="2020-08-12T07:13:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-12</time>
+        <a href="/2020/08/08/%E5%AD%97%E7%AC%A6%E9%9B%86%E7%BC%96%E7%A0%81%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="archive-article-date">
+  	<time datetime="2020-08-08T07:35:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-08</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="安装Java"><a href="#安装Java" class="headerlink" title="安装Java"></a>安装Java</h2><ul>
-<li>下载JDK（java Development Kit）<br><a href="https://www.oracle.com/java/technologies/javase-downloads.html" target="_blank" rel="noopener">搜索JDK并下载</a></li>
-<li>检测JDK安装是否成功</li>
+        <h2 id="什么是字符集和编码"><a href="#什么是字符集和编码" class="headerlink" title="什么是字符集和编码"></a>什么是字符集和编码</h2><ul>
+<li><h4 id="什么是字符集-Charset"><a href="#什么是字符集-Charset" class="headerlink" title="什么是字符集( Charset )"></a>什么是字符集( Charset )</h4><ul>
+<li>字符集就是字符的集合。-般会包含一种语言的字符。比如GBK ，是包含所有常用汉字字符的字符集。ASCII 是包含英文字符的字符集。<ul>
+<li>字符就是Java中的char , char是character的简写。</li>
 </ul>
-<p>1.运行java命令：java -version<br><img src="https://upload-images.jianshu.io/upload_images/6152450-48dec0d8dade5298.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/440" alt="图1"><br>2.运行javac命令<br><img src="https://upload-images.jianshu.io/upload_images/6152450-1024d102f8757396.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/440" alt="图2"></p>
-<ul>
-<li>下载 sublimeText编辑器，编写HelloWorld程序<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public class HelloWorld&#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">	    System.out.println(&quot;hello world!你好，世界&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2></li>
-<li>cd 进入文件所在的路径</li>
-<li>java 文件名.java(例如：HelloWorld.java)</li>
-<li>javac 文件名（<code>注意：这里不需要加文件名后缀</code>）</li>
+</li>
+</ul>
+</li>
+<li><h4 id="什么是编码-Encoding"><a href="#什么是编码-Encoding" class="headerlink" title="什么是编码( Encoding )"></a>什么是编码( Encoding )</h4><ul>
+<li>char代表一个字符，char的本质也是数字。将数字映射到字符，就叫编码。</li>
+<li>将一个字符集映射到数字 ,就是给这个字符集编码。编码是有标准的，所有的计算机系统按照同一个编码标准执行。<ul>
+<li>有时候编码和字符集会混用。<h2 id="编码和字符集介绍"><a href="#编码和字符集介绍" class="headerlink" title="编码和字符集介绍"></a>编码和字符集介绍</h2></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h4 id="常用的字符集简介"><a href="#常用的字符集简介" class="headerlink" title="常用的字符集简介"></a>常用的字符集简介</h4><ul>
+<li>ASCI码. ASCI表: hts://baike.baidu.com/item/ASCI/309296#3</li>
+<li>Unicode包含世界上所有常用字符，编码也有几种，包括UTF-8 ( 8-bit Unicode Tasormation Format ) ，UTF-16等。</li>
+<li>Unicode , GBK等所有常用的字符集,都会兼容ASCI。举个例子，字符A在这些所有常用的字符集里，都是对应数字65。</li>
+</ul>
+</li>
+<li><h4 id="Java中的字符集"><a href="#Java中的字符集" class="headerlink" title="Java中的字符集"></a>Java中的字符集</h4><ul>
+<li>Java中用的是UTF-16编码的Unicode.</li>
+<li>UTF-16用16个 bit ,即两个byte ,这也是char占用两个byte的原因。当把char转成数字的时候，需要用int。<h2 id="ASCII码和转义符-escape-character"><a href="#ASCII码和转义符-escape-character" class="headerlink" title="ASCII码和转义符( escape character )"></a>ASCII码和转义符( escape character )</h2></li>
+</ul>
+</li>
+<li><h4 id="如何输出特殊字符"><a href="#如何输出特殊字符" class="headerlink" title="如何输出特殊字符"></a>如何输出特殊字符</h4><ul>
+<li>ASCII 码+char，通过ASCII表可以找到需要的字符对应的数字。将这个数字转换为char ,然后输出这个char。ASCI 表: hts://baike .baidu.com/item/ACI/309296#3</li>
+<li>转义符。转义符用来给字符赋值，也可以用在字符串里面，作为字符串中的一个字符。</li>
+</ul>
+</li>
+<li><h4 id="转义符语法和常用的转义符"><a href="#转义符语法和常用的转义符" class="headerlink" title="转义符语法和常用的转义符"></a>转义符语法和常用的转义符</h4><ul>
+<li><code>\n</code>,换行符</li>
+<li><code>\&quot;</code>,双引号</li>
+<li><code>\t</code>,制表符</li>
+<li><code>\xxxx</code> , <code>unicode</code>编码对应的字符。</li>
+</ul>
+</li>
+</ul>
+<h2 id="字符串的“加法”"><a href="#字符串的“加法”" class="headerlink" title="字符串的“加法”"></a>字符串的“加法”</h2><ul>
+<li><h4 id="将变量穿插在字符串中输出"><a href="#将变量穿插在字符串中输出" class="headerlink" title="将变量穿插在字符串中输出"></a>将变量穿插在字符串中输出</h4><ul>
+<li>字符串可以和任何类型进行加法运算，则会将这个值的字符拼接到字夺串上。</li>
+<li>字符串也可以使用+=操作符来拼接</li>
+<li>字符串的加法运算符符合加法运算符本身的优先级</li>
+</ul>
+</li>
+<li><h4 id="字符串不是Java中的基本数据类型"><a href="#字符串不是Java中的基本数据类型" class="headerlink" title="字符串不是Java中的基本数据类型"></a>字符串不是Java中的基本数据类型</h4><ul>
+<li>字符串类型的名字叫做String</li>
+<li>虽然String不是Java 中的基础类型，但是也可以使用类似的语法<code>Stringstr= “bc&quot;;</code>来创建。开始的时候将其当成基础类型,更容易理解。</li>
+<li>String不是Java中的保留字。</li>
+<li>String的加法不会改变原String变量的值,改变其值要用赋值语句</li>
+</ul>
+</li>
 </ul>
 
       
@@ -264,7 +304,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/12/Java%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%EF%BC%88macOS%EF%BC%89/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/08/08/%E5%AD%97%E7%AC%A6%E9%9B%86%E7%BC%96%E7%A0%81%E5%92%8C%E5%AD%97%E7%AC%A6%E4%B8%B2/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -278,18 +318,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/08/12/%E7%B1%BB%EF%BC%88class%EF%BC%89%E8%AF%AD%E6%B3%95%E5%85%83%E7%B4%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/08/10/%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B%E8%AF%AD%E5%8F%A5/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          类（class）语法元素
+          程序执行流程语句
         
       </div>
     </a>
   
   
-    <a href="/2020/06/17/AndroidStudio%E4%B8%AD%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E6%8C%87%E5%AE%9A%E5%B8%83%E5%B1%80%E7%9A%84layout%E6%96%87%E4%BB%B6/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">AndroidStudio中如何创建指定布局的layout文件</div>
+    <a href="/2020/08/02/Java%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java中的运算符</div>
       <i class="icon-circle-right"></i>
     </a>
   
